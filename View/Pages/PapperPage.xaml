@@ -1,0 +1,46 @@
+﻿<Page x:Class="PaperPlease.View.Pages.PapperPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PaperPlease.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="421" d:DesignWidth="635"
+      Title="PapperPage">
+
+    <Grid>
+        <DataGrid Grid.Row="1"
+                  Name="AccDg">
+        </DataGrid>
+        <Button Grid.Row="2"
+                Content="Обновить"
+                Height="40"
+                Width="100"
+                Name="SearchTb"
+                Click="SearchTb_Click"
+                HorizontalAlignment="Right"
+                Margin="10"/>
+        <Grid>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Введите начало периода"
+                           Margin="10"/>
+                <DatePicker Name="StartDp"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1"
+                        Orientation="Vertical">
+                <TextBlock Text="Введите конец периода"
+                           Margin="10"/>
+                <DatePicker Name="FinishDp"/>
+            </StackPanel>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+    </Grid>
+</Page>

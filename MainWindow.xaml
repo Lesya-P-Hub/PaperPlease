@@ -1,0 +1,40 @@
+﻿<Window x:Class="PaperPlease.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PaperPlease"
+        mc:Ignorable="d"
+        Title="A4" Height="450" Width="800"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+        <Frame Name="BodyFrm"
+               Grid.Column="1"
+               NavigationUIVisibility="Hidden">
+            
+        </Frame>
+
+        <StackPanel Orientation="Vertical"
+                    Margin="20">
+            <Button Name="AccAddBtn"
+                    Click="AccAddBtn_Click"
+                    Height="40"
+                    Content="Отчёт"
+                    Margin="10"/>
+            <Button Name="AccPaperBtn"
+                    Click="AccPaperBtn_Click"
+                    Height="40"
+                    Content="Учёт по бумаге"
+                    Margin="10"/>
+            <Button Name="Acc2Btn"
+                    Click="Acc2Btn_Click"
+                    Height="40"
+                    Content="Учёт по группе"
+                    Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

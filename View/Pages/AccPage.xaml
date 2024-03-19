@@ -1,0 +1,55 @@
+﻿<Page x:Class="PaperPlease.View.Pages.AccPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PaperPlease.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="421" d:DesignWidth="635"
+      Title="AccPage">
+
+    <Grid>
+            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <DataGrid Name="AccDg"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Группа" Binding="{Binding Group.Name}"/>
+                <DataGridTextColumn Header="Бумага (кг)" Binding="{Binding Kg}"/>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat=dd/MM/yyyy }"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Right">
+                <TextBlock Text="Выберите параллель" Margin="10"/>
+                <TextBlock Text="Выберите группу" Margin="10"/>
+                <TextBlock Text="Введите количество бумаги (кг)" Margin="10"/>
+                <TextBlock Text="Выберите дату" Margin="10"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical"
+                        Grid.Column="1"
+                        Margin="10">
+                <ComboBox Name="SpezCmb"
+                          Margin="10" SelectionChanged="SpezCmb_SelectionChanged"/>
+                <ComboBox Name="GroupCmb"
+                          Margin="10"/>
+                <TextBox Name="CountTb"
+                         Width="270"/>
+                <DatePicker Name="DateDp"
+                            Margin="10"/>
+                <Button Name="AddBtn"
+                        Click="AddBtn_Click"
+                        Content="Добавить"
+                        Margin="20"/>
+            </StackPanel>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </Grid>
+</Page>
